@@ -1,6 +1,6 @@
 <?php
 
-namespace Oro\Bundle\EntityConfigBundle\Entity;
+namespace Oro\Bundle\EntityConfigBundle\Audit\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -10,8 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ConfigLogDiff
 {
-    const ENTITY_NAME = 'OroEntityConfigBundle:ConfigLogDiff';
-
     /**
      * @var integer
      * @ORM\Column(name="id", type="integer")
@@ -23,7 +21,7 @@ class ConfigLogDiff
     /**
      * @var ConfigLog
      *
-     * @ORM\ManyToOne(targetEntity="ConfigLog", inversedBy="diffs", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="ConfigLog", inversedBy="diffs")
      * @ORM\JoinColumn(name="log_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $log;

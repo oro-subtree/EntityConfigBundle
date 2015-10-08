@@ -1,6 +1,6 @@
 <?php
 
-namespace Oro\Bundle\EntityConfigBundle\Entity;
+namespace Oro\Bundle\EntityConfigBundle\Audit\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -14,8 +14,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class ConfigLog
 {
-    const ENTITY_NAME = 'OroEntityConfigBundle:ConfigLog';
-
     /**
      * @var integer
      * @ORM\Column(name="id", type="integer")
@@ -26,7 +24,7 @@ class ConfigLog
 
     /**
      * @var UserInterface
-     * @ORM\ManyToOne(targetEntity="Symfony\Component\Security\Core\User\UserInterface", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Symfony\Component\Security\Core\User\UserInterface")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $user;
