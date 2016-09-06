@@ -1,4 +1,4 @@
-datagrid:
+datagrids:
     # Entity config entities grid
     entityconfig-grid:
         options:
